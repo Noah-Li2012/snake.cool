@@ -138,6 +138,7 @@
             <option value="easy">Easy/简单</option>
             <option value="medium">Medium/中等</option>
             <option value="hard">Hard/困难</option>
+            <option value="hardcore">Hardcore/极限</option>
         </select>
     </div>
 
@@ -361,6 +362,7 @@
             if (difficulty === "easy") gameSpeed = 150;
             else if (difficulty === "medium") gameSpeed = 120;
             else if (difficulty === "hard") gameSpeed = 90;
+            else if (difficulty === "hardcore") gameSpeed = 30;
             clearInterval(gameInterval);
             if (!isGameOver) gameInterval = setInterval(gameLoop, gameSpeed);
         });

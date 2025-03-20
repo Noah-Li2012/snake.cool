@@ -125,29 +125,22 @@
     <div id="score">🍎: 0</div>
     <canvas id="gameCanvas"></canvas>
     <br>
-    <button id="startButton">Start Game</button>
+    <button id="startButton">Start Game/开始游戏</button>
     <div id="gameOverScreen">
         <p>Game Over!</p>
         <p id="finalScore"></p>
-        <button id="restartButton">Restart</button>
+        <button id="restartButton">Restart/重新开始</button>
     </div>
 
     <div id="difficultySelect">
-        <label for="difficulty">Select Difficulty: </label>
+       <label for="difficulty">Select Difficulty/难度切换: </label>
         <select id="difficulty">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
+            <option value="easy">Easy/简单</option>
+            <option value="medium">Medium/中等</option>
+            <option value="hard">Hard/困难</option>
         </select>
     </div>
 
-    <div id="languageSelect">
-        <label for="language">Select Language: </label>
-        <select id="language">
-            <option value="en">English</option>
-            <option value="zh">中文</option>
-        </select>
-    </div>
 
     <div id="dpad">
         <div class="dpad-row">
@@ -181,6 +174,7 @@
         const borderMargin = 20;
         let language = 'en';
         let isMobile = window.innerWidth <= 768;
+
 
         if (isMobile) {
             canvas.width = 300;
@@ -305,7 +299,7 @@
                 score++;
                 scoreDisplay.textContent = "🍎: " + score;
                 food = getRandomFoodPosition();
-                showFloatingText();  // Show "+1" when eating food
+                showFloatingText();
             } else {
                 snake.pop();
             }
@@ -369,10 +363,6 @@
             else if (difficulty === "hard") gameSpeed = 90;
             clearInterval(gameInterval);
             if (!isGameOver) gameInterval = setInterval(gameLoop, gameSpeed);
-        });
-
-        languageSelect.addEventListener("change", (event) => {
-            language = event.target.value;
         });
     </script>
 

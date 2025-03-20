@@ -360,8 +360,8 @@
         difficultySelect.addEventListener("change", () => {
             const difficulty = difficultySelect.value;
             if (difficulty === "easy") gameSpeed = 150;
-            else if (difficulty === "medium") gameSpeed = 120;
-            else if (difficulty === "hard") gameSpeed = 90;
+            else if (difficulty === "medium") gameSpeed = 100;
+            else if (difficulty === "hard") gameSpeed = 60;
             else if (difficulty === "hardcore") gameSpeed = 30;
             clearInterval(gameInterval);
             if (!isGameOver) gameInterval = setInterval(gameLoop, gameSpeed);
